@@ -21,14 +21,20 @@ class WeatherApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Wetter App")),
+        appBar: AppBar(
+          title: const Text("Wetteranzeige",
+              style: TextStyle(color: (Colors.blueGrey), fontSize: 30)),
+        ),
         body: const Center(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
               Text("Willkommen zur Wetter-App!",
                   style: TextStyle(color: (Colors.blue), fontSize: 24)),
-              Text("Magdeburg"),
+              Text(
+                "Magdeburg",
+                style: TextStyle(fontSize: 20),
+              ),
               Text("30°"),
               Text("Sonnig")
             ])));
