@@ -4,7 +4,7 @@ import 'package:wetter_app/weather_data.dart';
 
 void main() {
   final WeatherData city = WeatherData(
-      city: "Heilbronn", temperature: 26.5, weahtherCondition: "Regen");
+      city: "Magdeburg", temperature: 30, weahtherCondition: "Sonnig");
   runApp(MainApp(city: city));
 }
 
