@@ -1,42 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:wetter_app/weather_app.dart';
+import 'package:wetter_app/weather_data.dart';
 
 void main() {
-  runApp(const MainApp());
+  final WeatherData city = WeatherData(
+      city: "Heilbronn", temperature: 26.5, weahtherCondition: "Regen");
+  runApp(MainApp(city: city));
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  const MainApp({super.key, required this.city});
+
+  final WeatherData city;
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: WeatherApp(),
+    return MaterialApp(
+      home: WeatherApp(city: city),
     );
-  }
-}
-
-class WeatherApp extends StatelessWidget {
-  const WeatherApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("Wetteranzeige",
-              style: TextStyle(color: (Colors.blueGrey), fontSize: 30)),
-        ),
-        body: const Center(
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-              Text("Willkommen zur Wetter-App!",
-                  style: TextStyle(color: (Colors.blue), fontSize: 24)),
-              Text(
-                "Magdeburg",
-                style: TextStyle(fontSize: 20),
-              ),
-              Text("30°"),
-              Text("Sonnig")
-            ])));
   }
 }
